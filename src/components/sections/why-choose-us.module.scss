@@ -9,7 +9,7 @@
   }
 }
 .heading{
-  color: var(--color-text);
+  color: var(--color-text)!important;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
 }
@@ -23,10 +23,10 @@
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  color: var(--color-accent);
+  color: var(--color-accent)!important;
 }
 .text{
   font-size: 0.95rem;
-  color: var(--color-text);
+  color: var(--color-text) !important;
   text-align: center;
 }

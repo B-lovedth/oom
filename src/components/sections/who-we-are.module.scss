@@ -14,7 +14,7 @@
   justify-items: start;
 }
 .heading {
-  color: var(--color-text);
+  color: var(--color-text) !important;
   line-height: 1.2;
 }
 .imageWrapper {
