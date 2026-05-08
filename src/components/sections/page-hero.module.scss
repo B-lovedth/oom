@@ -1,0 +1,21 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.hero {
+  padding-block: 5rem 2rem;
+
+  @include respond-to(md) {
+    padding-block: 6rem 3rem;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 46rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}

@@ -1,0 +1,28 @@
+.card {
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(18, 33, 47, 0.1);
+  padding: 1.25rem;
+}
+
+.default {
+  box-shadow: var(--shadow-sm);
+}
+
+.elevated {
+  box-shadow: var(--shadow-md);
+}
+
+.outline {
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.glass {
+  background: #F0ECE380;
+  border-color: rgba(18, 33, 47, 0.08);
+}
+
+.ghost {
+  background: transparent;
+  border-color: transparent;
+}

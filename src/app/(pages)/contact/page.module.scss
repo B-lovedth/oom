@@ -1,0 +1,27 @@
+@use "../../../styles/abstracts/mixins" as *;
+
+.contactGrid {
+  display: grid;
+  gap: 1rem;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+  }
+}
+
+.formCard,
+.channelCard {
+  display: grid;
+  gap: 1rem;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.channels {
+  display: grid;
+  gap: 1rem;
+}

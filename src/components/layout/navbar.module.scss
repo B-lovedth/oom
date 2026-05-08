@@ -1,0 +1,142 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.header {
+  z-index: 40;
+  background: transparent;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.homeHeader {
+  color: #fff;
+}
+
+.bar {
+  min-height: 4.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.brandLogo {
+  display: block;
+  width: auto;
+  height: 2.5rem;
+}
+
+.navLinkHome {
+  color: #fff !important;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+
+  @include respond-to(lg) {
+    display: flex;
+  }
+}
+
+.navLink {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  transition: color 160ms ease;
+
+  &:hover {
+    color: var(--color-text);
+  }
+}
+
+.actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.desktopCta {
+  display: none;
+
+  @include respond-to(lg) {
+    display: inline-flex;
+  }
+}
+
+.menuButton {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.22rem;
+
+  @include respond-to(lg) {
+    display: none;
+  }
+
+  span {
+    width: 1rem;
+    height: 0.125rem;
+    border-radius: 999px;
+    background: var(--color-text);
+  }
+}
+
+.menuButtonHome {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.12);
+
+  span {
+    background: #fff;
+  }
+}
+
+.mobilePanel {
+  display: grid;
+  gap: 0.875rem;
+  padding: 0 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  pointer-events: none;
+  transition: all 180ms ease;
+
+  @include respond-to(lg) {
+    display: none;
+  }
+}
+
+.mobilePanelOpen {
+  max-height: 20rem;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobileLink {
+  padding: 0.9rem 1rem;
+  border-radius: 0.875rem;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(18, 33, 47, 0.08);
+  font-weight: 600;
+}

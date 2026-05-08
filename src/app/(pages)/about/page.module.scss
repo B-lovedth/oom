@@ -1,0 +1,54 @@
+@use "../../../styles/abstracts/mixins" as *;
+
+.aboutGrid {
+  display: grid;
+  gap: 1.5rem;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: start;
+  }
+}
+
+.statementCard {
+  display: grid;
+  gap: 1rem;
+}
+
+.statementActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.highlights {
+  display: grid;
+  gap: 1rem;
+}
+
+.highlightCard {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.timelineCard {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.timelineYear {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}

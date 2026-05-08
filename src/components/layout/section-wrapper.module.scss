@@ -1,0 +1,33 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.section {
+  padding-block: 4.5rem;
+
+  @include respond-to(md) {
+    padding-block: 8rem;
+  }
+}
+
+.header {
+  display: grid;
+  gap: 0.875rem;
+  margin-bottom: 1.75rem;
+  max-width: 42rem;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+}
+
+.description {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+}

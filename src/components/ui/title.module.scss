@@ -1,0 +1,23 @@
+.title{
+    font-size: 16px;
+    color: var(--color-text);
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-weight: 500;
+    padding-block: 2rem;
+    &.white {
+        color: var(--color-text-white);
+        span{
+            background: var(--color-text-white);
+        }
+    }
+    span{
+    width: 10rem;
+    display: block;
+    height: 0.1rem;
+    background: var(--color-text);
+    border-radius: 20px;
+    }
+}
