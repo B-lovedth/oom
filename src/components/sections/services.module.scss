@@ -21,7 +21,10 @@
 .introButton {
   @include respond-to(md) {
     display: inline-flex;
-  }
+    padding: 1rem 2rem;
+    background: #ffffff;
+    color: var(--color-accent);
+    border-radius: 10px;  }
 
   display: none;
 
