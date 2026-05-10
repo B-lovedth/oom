@@ -21,7 +21,7 @@
 
 .card {
   position: relative;
-  min-height: 19rem;
+  min-height: 0;
   padding: 1.25rem;
   border-radius: 1.5rem;
   background: var(--color-accent);
@@ -41,6 +41,7 @@
   @include respond-to(md) {
     flex: 1 1 0;
     min-width: 0;
+    min-height: 19rem;
   }
 
   &:hover {
@@ -50,10 +51,11 @@
 }
 
 .open {
-  min-height: 21rem;
+  min-height: 0;
 
   @include respond-to(md) {
     flex: 2.35 1 0;
+    min-height: 21rem;
   }
 }
 
@@ -166,6 +168,17 @@ font-size: clamp(0.95rem, 1.1rem + .35vw, 1.05rem);
   color: var(--color-text-white);
   opacity: 0.95;
   margin: 0;
+  max-height: none;
+  overflow: visible;
+  opacity: 1;
+  transform: none;
+}
+
+.descriptionOpen {
+  opacity: 1;
+}
+
+.grid[data-accordion="desktop"] .description {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -176,7 +189,7 @@ font-size: clamp(0.95rem, 1.1rem + .35vw, 1.05rem);
     transform 220ms ease;
 }
 
-.descriptionOpen {
+.grid[data-accordion="desktop"] .descriptionOpen {
   max-height: 12rem;
   opacity: 1;
   transform: translateY(0);
@@ -195,6 +208,12 @@ font-size: clamp(0.95rem, 1.1rem + .35vw, 1.05rem);
 .open .closeIcon {
   opacity: 1;
   transform: scale(0.55) rotate(45deg);
+}
+
+@include respond-to(md) {
+  .toggle {
+    display: inline-flex;
+  }
 }
 
 @include respond-to(md) {

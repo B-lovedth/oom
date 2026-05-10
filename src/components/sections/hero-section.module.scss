@@ -1,7 +1,11 @@
 @use "../../styles/abstracts/mixins" as *;
 
 .hero {
-  padding-block: 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+  
+  padding-block: 5.25rem 1.5rem;
+
   @include respond-to(md) {
     padding-block: 3rem 5rem;
     min-height: 100vh;
@@ -13,28 +17,85 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, #00000073, transparent);
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.5)),
+    linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent 55%);
   z-index: -1;
 }
+
 .backgroundImage {
   object-fit: cover;
   object-position: center;
   z-index: -2;
 }
+
 .grid {
   display: grid;
   gap: 2rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
+  min-height: calc(100svh - 6.75rem);
 
   @include respond-to(lg) {
     grid-template-columns: 1.05fr 0.95fr;
     gap: 2.5rem;
+    min-height: auto;
+    align-content: center;
   }
 }
 
 .copy {
   display: grid;
-  gap: 1.95rem;
+  justify-items: center;
+}
+
+.copyPanel {
+     width: min(100%, 26rem);
+    color: var(--color-text-white);
+    gap: 1.15rem;
+    padding: 1rem;
+    display: grid;
+
+  @include respond-to(lg) {
+    width: auto;
+    max-width: 42rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    backdrop-filter: none;
+  }
+}
+
+.badgeRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.badgeImage {
+  width: 3.5rem;
+  height: auto;
+  @include respond-to(md) {
+    width: 4.5rem;
+  }
+}
+
+.badgeText {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.heading {
+  color: var(--color-text-white);
+  font-size: clamp(2rem, 8vw, 3.35rem);
+  line-height: 1.05;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 36rem;
 }
 
 .actions {
@@ -78,11 +139,15 @@
 }
 
 .visual {
-      min-height: 100%;
+  display: none;
+
+  @include respond-to(lg) {
+    min-height: 100%;
     position: relative;
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
+  }
 }
 
 .glow {

@@ -42,7 +42,7 @@ export function Navbar() {
           </nav>
 
           <div className={styles.actions}>
-            <Button   href="/contact">
+            <Button variant="primary" className={styles.desktopCta} href="/contact">
               Get a Consultation
             </Button>
             <button
@@ -53,22 +53,43 @@ export function Navbar() {
               aria-label="Toggle navigation"
               onClick={() => setOpen((value) => !value)}
             >
-              <span />
-              <span />
-              <span />
+              <span className={styles.menuLine} />
+              <span className={styles.menuLine} />
+              <span className={styles.menuLine} />
             </button>
           </div>
         </div>
 
         <div id="mobile-nav" className={`${styles.mobilePanel} ${open ? styles.mobilePanelOpen : ""}`}>
-          {navItems.map((item) => (
-            <Link key={item.href} className={styles.mobileLink} href={item.href} onClick={() => setOpen(false)}>
-              {item.label}
+          <div className={styles.mobileTopRow}>
+            <Link className={styles.mobileBrand} href="/" onClick={() => setOpen(false)}>
+              <Image
+                className={styles.mobileBrandLogo}
+                src="/logo-colored.png"
+                alt="WorkSheet"
+                width={128}
+                height={36}
+              />
             </Link>
-          ))}
-          <Button href="/contact" onClick={() => setOpen(false)}>
-            Get in touch
-          </Button>
+
+            <button
+              className={`${styles.mobileCloseButton} ${isHomePage ? styles.mobileCloseButtonHome : ""}`}
+              type="button"
+              aria-label="Close navigation"
+              onClick={() => setOpen(false)}
+            >
+              <span />
+              <span />
+            </button>
+          </div>
+
+          <nav className={styles.mobileNav} aria-label="Mobile primary">
+            {navItems.map((item) => (
+              <Link key={item.href} className={styles.mobileLink} href={item.href} onClick={() => setOpen(false)}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </Container>
     </header>

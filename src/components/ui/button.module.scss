@@ -21,6 +21,10 @@
   &:hover {
     transform: translateY(-1px);
   }
+  @media( max-width: 400px) {
+    padding: 0.85rem 1rem;
+    width: 100%;
+  }
 }
 
 .primary {

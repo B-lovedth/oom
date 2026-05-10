@@ -1,63 +1,94 @@
-import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
+
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Container } from "@/components/layout/container";
 import { Heading } from "@/components/ui/heading";
-import { Input } from "@/components/ui/input";
-import { Text } from "@/components/ui/text";
-import { PageHero } from "@/components/sections/page-hero";
-import { SectionWrapper } from "@/components/layout/section-wrapper";
-import { contactChannels } from "@/utils/site-content";
+
 import styles from "./page.module.scss";
 
 export const metadata = {
   title: "Contact",
 };
 
+const contactCards = [
+  {
+    icon: "/assets/footer/call.png",
+    title: "Give Us a Call",
+    detail: "081029938475, 0819233348589",
+  },
+  {
+    icon: "/assets/footer/location.png",
+    title: "Our Location",
+    detail: "081029938475, 0819233348589",
+  },
+  {
+    icon: "/assets/footer/mail.png",
+    title: "Send Us an Email",
+    detail: "Hello@OOM.com",
+  },
+];
+
 export default function ContactPage() {
   return (
-    <>
-      <PageHero
-        badge="Contact"
-        title="Tell us what you are building and we will shape the interface around it."
-        description="Use the form below or pick one of the direct channels if you want to move quickly."
-        primaryAction={{ label: "Email us", href: "mailto:hello@worksheet.studio" }}
-        secondaryAction={{ label: "View services", href: "/services" }}
-      />
+    <main className={styles.page}>
+      <Container size="wide">
+        <section className={styles.hero}>
+          <Heading level={1} className={styles.title}>
+            Contact Us
+          </Heading>
+          <p className={styles.subtitle}>
+            We have grown into a firm respected for technical excellence and deep regulatory experience.
+          </p>
+        </section>
 
-      <SectionWrapper>
-        <div className={styles.contactGrid}>
-          <Card className={styles.formCard} variant="elevated">
-            <Badge tone="accent">Project request</Badge>
-            <Heading level={2}>Share the outline of your project</Heading>
-            <form className={styles.form}>
-              <Input label="Name" name="name" placeholder="Your name" />
-              <Input label="Email" name="email" type="email" placeholder="you@example.com" />
-              <Input label="Company" name="company" placeholder="Company or team" />
-              <Input
-                label="What do you need?"
-                name="message"
-                as="textarea"
-                rows={5}
-                placeholder="Describe the pages, timeline, or constraints."
-              />
-              <Button type="submit">Send inquiry</Button>
+        <section className={styles.layout}>
+          <div className={styles.formColumn}>
+            <form
+              className={styles.formCard}
+              action="https://example.com/contact-demo-endpoint"
+              method="post"
+            >
+              <label className={styles.field}>
+                <span>Full Name</span>
+                <input type="text" name="fullName" placeholder="Enter Your Name" />
+              </label>
+
+              <label className={styles.field}>
+                <span>Phone Number</span>
+                <input type="tel" name="phone" placeholder="Enter Your Phone Number" />
+              </label>
+
+              <label className={styles.field}>
+                <span>Email Address</span>
+                <input type="email" name="email" placeholder="Enter Your Email Address" />
+              </label>
+
+              <label className={styles.field}>
+                <span>Leave Us a Message</span>
+                <textarea name="message" rows={5} placeholder="Your Message Here" />
+              </label>
+
+              <Button type="submit" variant="secondary" className={styles.submitButton}>
+                Contact Us
+              </Button>
             </form>
-          </Card>
+          </div>
 
-          <div className={styles.channels}>
-            {contactChannels.map((channel) => (
-              <Card key={channel.label} className={styles.channelCard}>
-                <Badge tone="success">{channel.label}</Badge>
-                <Heading level={3}>{channel.title}</Heading>
-                <Text>{channel.description}</Text>
-                <Button variant="ghost" href={channel.href}>
-                  {channel.action}
-                </Button>
-              </Card>
+          <div className={styles.infoColumn}>
+            {contactCards.map((card) => (
+              <article key={card.title} className={styles.infoCard}>
+                <span className={styles.iconWrap} aria-hidden="true">
+                  <Image src={card.icon} alt="" width={20} height={20} />
+                </span>
+                <div className={styles.infoCopy}>
+                  <h2 className={styles.infoTitle}>{card.title}</h2>
+                  <p className={styles.infoDetail}>{card.detail}</p>
+                </div>
+              </article>
             ))}
           </div>
-        </div>
-      </SectionWrapper>
-    </>
+        </section>
+      </Container>
+    </main>
   );
 }

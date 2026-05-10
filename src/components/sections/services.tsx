@@ -25,7 +25,7 @@ export function Services({ services }: ServicesProps) {
       <Title title="Our Core Services" color="white" />
       <div className={styles.intro}>
         <Heading level={3} color="white">We use the latest technology and software to ensure accurate record-keeping</Heading>
-       <Button href="/services" variant="secondary">Learn More</Button>
+       <Button href="/services" variant="secondary" className={styles.introButton}>Learn More</Button>
       </div>
       <div className={styles.grid}>
         {services.map((service, index) => (

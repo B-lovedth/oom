@@ -11,10 +11,13 @@ const googleSans = Google_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "WorkSheet",
-    template: "%s | WorkSheet",
+    default: "OOM",
+    template: "%s | OOM",
   },
-  description: "A responsive product marketing site for WorkSheet.",
+  description: "A responsive product marketing site for OOM.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({

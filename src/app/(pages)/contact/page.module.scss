@@ -1,27 +1,185 @@
 @use "../../../styles/abstracts/mixins" as *;
 
-.contactGrid {
-  display: grid;
-  gap: 1rem;
+.page {
+  padding-block: 1rem 4rem;
+  background: #ffffff;
+}
 
-  @include respond-to(lg) {
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: start;
+.hero {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1.75rem;
+
+  @include respond-to(md) {
+    margin-bottom: 2.5rem;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
-.formCard,
-.channelCard {
-  display: grid;
-  gap: 1rem;
+.title {
+  color: var(--color-text);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
 }
 
-.form {
-  display: grid;
-  gap: 1rem;
+.subtitle {
+  max-width: 24rem;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
-.channels {
+.layout {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+
+  @include respond-to(lg) {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 3rem;
+  }
+}
+
+.formColumn {
+  order: 1;
+
+  @include respond-to(lg) {
+    order: 2;
+  }
+}
+
+.infoColumn {
+  display: grid;
+  gap: 0.9rem;
+  order: 2;
+
+  @include respond-to(lg) {
+    order: 1;
+    padding-top: 10rem;
+    justify-items: start;
+  }
+}
+
+.formCard {
   display: grid;
   gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  background: var(--color-accent);
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(18, 33, 47, 0.1);
+
+  @include respond-to(lg) {
+    margin-left: auto;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+
+  span {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.98);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 0;
+    border-radius: 0.45rem;
+    background: #ffffff;
+    color: var(--color-text);
+    padding: 0.8rem 0.9rem;
+    font-size: 0.95rem;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+
+    &::placeholder {
+      color: rgba(62, 64, 149, 0.3);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: inset 0 0 0 1px rgba(62, 64, 149, 0.35);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 7rem;
+  }
+}
+
+.submitButton {
+      width: 100%;
+    padding: 1rem;
+    color: var(--color-accent);
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+
+  &:hover {
+    color: var(--color-accent);
+    background: #f3f3f3;
+  }
+}
+
+.infoCard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+  align-items: center;
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  background: var(--color-accent);
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(18, 33, 47, 0.1);
+  
+  @include respond-to(lg) {
+    max-width: 18rem;
+    min-height: 5rem;
+  }
+}
+
+.iconWrap {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+.infoCopy {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.infoTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.infoDetail {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+@include respond-to(md) {
+  .hero {
+    width: min(100%, 24rem);
+  }
+
+  .infoColumn {
+    grid-template-rows: repeat(3, auto);
+  }
 }

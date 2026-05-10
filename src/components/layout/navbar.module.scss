@@ -4,21 +4,30 @@
   z-index: 40;
   background: transparent;
   top: 0;
-  position: absolute;
   width: 100%;
-  padding: 2rem 0;
+  padding: 1rem 0;
+
+  @include respond-to(md) {
+    padding: 2rem 0;
+  }
 }
 
 .homeHeader {
+  position: absolute;
+
   color: #fff;
 }
 
 .bar {
-  min-height: 4.75rem;
+  min-height: 4.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+
+  @include respond-to(md) {
+    min-height: 4.75rem;
+  }
 }
 
 .brand {
@@ -111,15 +120,23 @@
 }
 
 .mobilePanel {
-  display: grid;
-  gap: 0.875rem;
-  padding: 0 0 1rem;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(-0.5rem);
-  pointer-events: none;
-  transition: all 180ms ease;
+     background: var(--color-accent);
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+    border-radius: 0;
+    gap: 1.5rem;
+    padding: 1rem 1rem 1.25rem;
+    transition: all .18s;
+    display: grid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    transform: translateY(-.5rem);
+    box-shadow: 0 20px 50px #12212f2e;
 
   @include respond-to(lg) {
     display: none;
@@ -127,16 +144,83 @@
 }
 
 .mobilePanelOpen {
-  max-height: 20rem;
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
+.mobileTopRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.mobileBrand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.mobileBrandLogo {
+  display: block;
+  width: auto;
+  height: 2.5rem;
+}
+
+.mobileNav {
+  display: grid;
+}
+
 .mobileLink {
-  padding: 0.9rem 1rem;
-  border-radius: 0.875rem;
-  background: rgba(255, 255, 255, 0.68);
-  border: 1px solid rgba(18, 33, 47, 0.08);
-  font-weight: 600;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #ffffff;
+
+  &:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+}
+
+.mobileCloseButton {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  flex-shrink: 0;
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1rem;
+    height: 0.12rem;
+    border-radius: 999px;
+    background: #ffffff;
+    transform-origin: center;
+  }
+
+  span:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  span:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.mobileCloseButtonHome {
+  span {
+    background: #ffffff;
+  }
+}
+
+.menuLine {
+  width: 1rem;
+  height: 0.125rem;
+  border-radius: 999px;
+  background: currentColor;
 }

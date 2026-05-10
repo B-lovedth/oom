@@ -8,12 +8,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
+    @include respond-to(md) {
+     margin-bottom: 2rem;
+  }
   h3{
     font-weight: 500;
     max-width: 28rem;
   }
 }
+
+.introButton {
+  @include respond-to(md) {
+    display: inline-flex;
+  }
+
+  display: none;
+
+  @include respond-to(md) {
+    display: inline-flex;
+  }
+}
+
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -21,7 +37,7 @@
 
 .row {
   display: grid;
-  gap: 1rem;
+  gap: 5rem;
   align-items: center;
 
   @include respond-to(md) {

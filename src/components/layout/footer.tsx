@@ -41,7 +41,7 @@ export function Footer() {
             </form>
 
             <div className={styles.logoWrap}>
-              <Image src="/logo-colored.png" alt="OOM Professional Services" width={320} height={160} priority={false} />
+              <Image src="/logo-colored.png" alt="OOM Professional Services" width={200} height={100} priority={false} />
             </div>
           </div>
 

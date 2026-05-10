@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/layout/container";
@@ -41,16 +40,28 @@ export function HeroSection({
       <Container size="wide">
         <div className={styles.grid}>
           <div className={styles.copy}>
-            <Badge>{badge}</Badge>
-            <Heading level={2}>{title}</Heading>
-            <Text size="lg" tone="default">
-              {description}
-            </Text>
-            <div className={styles.actions}>
-              <Button href={primaryAction.href}>{primaryAction.label}</Button>
-              <Button href={secondaryAction.href} variant="outline">
-                {secondaryAction.label}
-              </Button>
+            <div className={styles.copyPanel}>
+              <div className={styles.badgeRow}>
+                <Image src="/assets/badge-icon.png" alt="" width={144} height={81} className={styles.badgeImage} />
+                <span className={styles.badgeText}>{badge}</span>
+              </div>
+
+              <Heading level={2} className={styles.heading}>
+                {title}
+              </Heading>
+
+              <Text size="lg" tone="default" className={styles.description}>
+                {description}
+              </Text>
+
+              <div className={styles.actions}>
+                <Button href={primaryAction.href} >
+                  {primaryAction.label}
+                </Button>
+                <Button href={secondaryAction.href} variant="outline">
+                  {secondaryAction.label}
+                </Button>
+              </div>
             </div>
           </div>
 
