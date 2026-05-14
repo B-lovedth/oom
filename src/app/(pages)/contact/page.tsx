@@ -1,8 +1,9 @@
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { Heading } from "@/components/ui/heading";
+
+import { ContactForm } from "./contact-form"; 
 
 import styles from "./page.module.scss";
 
@@ -43,35 +44,7 @@ export default function ContactPage() {
 
         <section className={styles.layout}>
           <div className={styles.formColumn}>
-            <form
-              className={styles.formCard}
-              action="https://example.com/contact-demo-endpoint"
-              method="post"
-            >
-              <label className={styles.field}>
-                <span>Full Name</span>
-                <input type="text" name="fullName" placeholder="Enter Your Name" />
-              </label>
-
-              <label className={styles.field}>
-                <span>Phone Number</span>
-                <input type="tel" name="phone" placeholder="Enter Your Phone Number" />
-              </label>
-
-              <label className={styles.field}>
-                <span>Email Address</span>
-                <input type="email" name="email" placeholder="Enter Your Email Address" />
-              </label>
-
-              <label className={styles.field}>
-                <span>Leave Us a Message</span>
-                <textarea name="message" rows={5} placeholder="Your Message Here" />
-              </label>
-
-              <Button type="submit" variant="secondary" className={styles.submitButton}>
-                Contact Us
-              </Button>
-            </form>
+            <ContactForm />
           </div>
 
           <div className={styles.infoColumn}>
