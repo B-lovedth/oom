@@ -158,14 +158,14 @@
   gap: 0.9rem;
   align-items: center;
   width: 100%;
-  padding: 0.95rem 1rem;
+  padding: 1.95rem 1.3rem;
   border-radius: 1rem;
   background: var(--color-accent);
   color: #ffffff;
   box-shadow: 0 12px 30px rgba(18, 33, 47, 0.1);
   
   @include respond-to(lg) {
-    max-width: 18rem;
+    // max-width: 18rem;
     min-height: 5rem;
   }
 }
@@ -188,13 +188,13 @@
 
 .infoTitle {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 1.35rem;
   line-height: 1.2;
 }
 
 .infoDetail {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.35;
   color: rgba(255, 255, 255, 0.96);
 }

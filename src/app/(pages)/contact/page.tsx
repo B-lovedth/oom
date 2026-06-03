@@ -51,7 +51,7 @@ export default function ContactPage() {
             {contactCards.map((card) => (
               <article key={card.title} className={styles.infoCard}>
                 <span className={styles.iconWrap} aria-hidden="true">
-                  <Image src={card.icon} alt="" width={20} height={20} />
+                  <Image src={card.icon} alt="" width={30} height={30} />
                 </span>
                 <div className={styles.infoCopy}>
                   <h2 className={styles.infoTitle}>{card.title}</h2>
