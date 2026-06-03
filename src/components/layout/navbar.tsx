@@ -21,7 +21,7 @@ export function Navbar() {
           <Link className={styles.brand} href="/" onClick={() => setOpen(false)}>
             <Image
               className={styles.brandLogo}
-              src={isHomePage ? "/logo.png" : "/logo-colored.png"}
+              src={isHomePage ? "/logo-colored.png" : "/logo-colored.png"}
               alt="WorkSheet"
               width={144}
               height={40}
@@ -42,7 +42,7 @@ export function Navbar() {
           </nav>
 
           <div className={styles.actions}>
-            <Button variant="primary" className={styles.desktopCta} href="/contact">
+            <Button variant="primary"  href="/contact">
               Get a Consultation
             </Button>
             <button

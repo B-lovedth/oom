@@ -68,8 +68,8 @@
 }
 
 .iconBubble {
-  width: 2.85rem;
-  height: 2.85rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
   display: inline-flex;
@@ -90,6 +90,7 @@
   color: rgba(255, 255, 255, 0.95);
   font-size: 0.93rem;
   line-height: 1.45;
+  min-height: 4rem;
 }
 
 .cardButton {

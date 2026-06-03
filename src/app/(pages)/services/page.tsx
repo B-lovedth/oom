@@ -52,8 +52,8 @@ export default function ServicesPage() {
                     <Image
                       src={serviceMeta[index % serviceMeta.length].icon}
                       alt=""
-                      width={22}
-                      height={22}
+                      width={32}
+                      height={32}
                     />
                   </span>
                   <Heading level={3} className={styles.cardTitle}>
@@ -63,7 +63,7 @@ export default function ServicesPage() {
 
                 <Text className={styles.cardText}>{service.description}</Text>
 
-                <Button href="/contact" variant="outline" className={styles.cardButton}>
+                <Button href="/contact" variant="outline" >
                   Contact Us
                 </Button>
               </div>
