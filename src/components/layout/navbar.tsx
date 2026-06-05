@@ -14,6 +14,9 @@ export function Navbar() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
+  const handleMenuToggle = () => {
+    setOpen((prev) => !prev);
+  }
   return (
     <header className={`${styles.header} ${isHomePage ? styles.homeHeader : ""}`}>
       <Container size="wide">
@@ -21,10 +24,10 @@ export function Navbar() {
           <Link className={styles.brand} href="/" onClick={() => setOpen(false)}>
             <Image
               className={styles.brandLogo}
-              src={isHomePage ? "/logo-colored.png" : "/logo-colored.png"}
+              src="/logo-colored.png"
               alt="WorkSheet"
               width={144}
-              height={40}
+              height={41}
               priority
             />
           </Link>
@@ -42,7 +45,7 @@ export function Navbar() {
           </nav>
 
           <div className={styles.actions}>
-            <Button variant="primary"  href="/contact">
+            <Button variant="desktopCta"   href="/contact">
               Get a Consultation
             </Button>
             <button
@@ -51,7 +54,7 @@ export function Navbar() {
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label="Toggle navigation"
-              onClick={() => setOpen((value) => !value)}
+              onClick={handleMenuToggle}
             >
               <span className={styles.menuLine} />
               <span className={styles.menuLine} />

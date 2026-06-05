@@ -83,6 +83,13 @@
 
   @include respond-to(lg) {
     display: inline-flex;
+    background: linear-gradient(
+      135deg,
+      var(--color-accent),
+      var(--color-accent-strong)
+    );
+    color: #fff;
+    box-shadow: 0 14px 28px #0f766e3d;
   }
 }
 
@@ -120,23 +127,23 @@
 }
 
 .mobilePanel {
-     background: var(--color-accent);
-    color: #fff;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 50;
-    border-radius: 0;
-    gap: 1.5rem;
-    padding: 1rem 1rem 1.25rem;
-    transition: all .18s;
-    display: grid;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
-    transform: translateY(-.5rem);
-    box-shadow: 0 20px 50px #12212f2e;
+  background: var(--color-accent);
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 50;
+  border-radius: 0;
+  gap: 1.5rem;
+  padding: 1rem 1rem 1.25rem;
+  transition: all 0.18s;
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  transform: translateY(-0.5rem);
+  box-shadow: 0 20px 50px #12212f2e;
 
   @include respond-to(lg) {
     display: none;

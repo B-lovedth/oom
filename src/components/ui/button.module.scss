@@ -49,3 +49,17 @@
   color: var(--color-text-white);
   border-color: var(--color-text-white);
 }
+.desktopCta {
+  display: none;
+
+  @include respond-to(lg) {
+    display: inline-flex;
+    background: linear-gradient(
+      135deg,
+      var(--color-accent),
+      var(--color-accent-strong)
+    );
+    color: #fff;
+    box-shadow: 0 14px 28px #0f766e3d;
+  }
+}

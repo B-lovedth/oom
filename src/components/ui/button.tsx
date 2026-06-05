@@ -2,7 +2,7 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "reac
 import Link from "next/link";
 import styles from "./button.module.scss";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "outline" ;
+type ButtonVariant = "primary" | "secondary" | "ghost" | "outline" | "desktopCta" ;
 
 type BaseProps = {
   children: ReactNode;
